@@ -13,3 +13,7 @@ ebs_report_all_regions.sh runs the python script for all regions.<br>
 
 
 For CSV report, go into the CSV folder and run all_my_instances_inCSV.sh > Filename.csv<br>
+
+*Known Issue : Sometimes you will get all the resources listed twice, as a workaround you can remove/rename the config file insde your .aws directory*
+
+

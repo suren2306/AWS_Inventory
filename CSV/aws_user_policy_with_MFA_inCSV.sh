@@ -28,7 +28,7 @@ for profile in ${AllProfiles[@]}; do
 		## 	echo -n ${nhl}
 		## fi
 		# This will output each policy associated with the specific user
-        mfa_status=`aws iam list-mfa-devices --user-name $user --output text`
+        mfa_status=`aws iam list-mfa-devices --user-name $user --profile $profile --output text`
         if [ -z "$mfa_status" ]; then MFA="No"; else MFA="Yes"; fi
         #echo $MFA
 		aws iam list-attached-user-policies --user-name $user --profile $profile --output text --query 'AttachedPolicies[].PolicyName' | tr '\t' '\n' | awk -F $"\t" -v var=${profile} -v var2=${user} -v var3=${MFA} '{printf "%s,%s,%s,%s \n",var,var2,var3,$1}'

@@ -6,7 +6,6 @@ AllProfiles=( $(./AllProfiles.sh ProfileNameOnly | awk '{print $1}') )
 format='%s,%s,%s,%s,%s,%s,%s,%s,%s\n'
 #echo "Outputting all EC2 instances from all profiles"
 printf "$format" "Profile" "Region" "Instance Name" "Instance Type" "Instance ID" "State" "Private IP" "Public IP" "Created On"
-#printf "$format" "-------" "------" "-------------" "-------------" "-----------" "-----" "----------" "---------" "----------"
 for regions in `aws ec2 describe-regions --region ap-south-1 --output text | cut -f3`; do
     region=${1-"$regions"}
     for profile in ${AllProfiles[@]}; do

@@ -9,4 +9,7 @@ Its a modified version of paulbayer's [Inventory_scripts](https://github.com/pau
 
 ebs-report.py gathers ebs volume details. It can be run with python ebs-report.py --regions "region-name". <br>
 
-ebs_report_all_regions.sh runs the python script for all regions.
+ebs_report_all_regions.sh runs the python script for all regions.<br>
+
+
+For CSV report, go into the CSV folder and run all_my_instances_inCSV.sh > Filename.csv<br>

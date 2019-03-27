@@ -8,7 +8,7 @@ format='%s,%s,%s,%s,%s,%s,%s,%s,%s\n'
 printf "$format" "Profile" "Region" "Instance Name" "Instance Type" "Instance ID" "State" "Private IP" "Public IP" "Created On"
 #Enter a vaild aws profile in the below line
 for profile in ${AllProfiles[@]}; do
-    for regions in `aws ec2 describe-regions --region ap-south-1 --profile rgDevopsRND --output text | cut -f3`; do
+    for regions in `aws ec2 describe-regions --region ap-south-1 --profile $profile --output text | cut -f3`; do
     #echo -e "\n\nChecking in $regions for $profile account"
     aws ec2 describe-instances --output text --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`]|[0].Value,InstanceType,InstanceId,State.Name,PrivateIpAddress,PublicIpAddress,LaunchTime]' --profile $profile --region $regions | awk -F $"\t" -v rgn=${regions} -v var=${profile} -v fmt="${format}" '{printf fmt,var,rgn,$1,$2,$3,$4,$5,$6,$7}'
     done

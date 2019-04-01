@@ -12,8 +12,9 @@ ebs-report.py gathers ebs volume details. It can be run with python ebs-report.p
 ebs_report_all_regions.sh runs the python script for all regions.<br>
 
 
-For CSV report, go into the CSV folder and run all_my_instances_inCSV.sh > Filename.csv<br>
+For EBS reort, you have to properly configure the aws cli, it doesnt support defining profiles (--profiles).<br>
+
+For CSV report, go into the CSV folder and run all_instances_inCSV.sh > EC2.csv<br>
+
 
 *Known Issue : Sometimes you will get all the resources listed twice, as a workaround you can remove/rename the config file insde your .aws directory*
-
-

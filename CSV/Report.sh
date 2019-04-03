@@ -11,5 +11,5 @@ echo "Running AMI Script"
 echo "Running Users Script"
 ./all_aws_user_with_policy_and_MFA_inCSV.sh > Users
 #ssconvert package needs to be installed already
-ssconvert --merge-to=Report_$date.xls EC2 EBS Users AMI Snapshots
+ssconvert --merge-to=AWS_Report_$date.xls EC2 EBS Users AMI Snapshots
 rm EC2 Users AMI Snapshots EBS

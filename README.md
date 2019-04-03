@@ -15,7 +15,7 @@ ebs_report_all_regions.sh runs the python script for all regions.<br>
 For EBS reort, you have to properly configure the aws cli, it doesnt support defining profiles (--profiles).<br>
 
 For CSV report, go into the CSV folder and run Report.sh<br>
-*ssconvert needs to be installed on the machine*<br>
+*ssconvert needs to be installed on the machine, links for [CentOS](https://linoxide.com/linux-how-to/methods-convert-xlsx-format-files-csv-linux-cli/) & [Ubuntu](https://serverfault.com/questions/409607/install-ssconvert-part-of-gnumeric-on-a-server-without-gnome/905814)*<br>
 
 You can also execute individual scripts, for example all_my_instances.sh > EC2.csv<br>
 
